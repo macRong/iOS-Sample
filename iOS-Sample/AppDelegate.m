@@ -22,7 +22,7 @@
 {
     Install_MP_UncaughtExceptionHandler();
     
-//    master 1
+//    master 2
 
     return YES;
 }
