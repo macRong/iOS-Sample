@@ -22,11 +22,35 @@ static int requestCount = 0;
 static int requestMax = 4;  // 每次最多访问个数
 static int currentIndex = 0; // 当前访问的index
 
+typedef NS_ENUM(char, MYViewItemPosition) {
+    MYViewItemPositionTop,
+    MYViewItemPositionBottom,
+    MYViewItemPositionLeft,
+    MYViewItemPositionRight
+};
+
+enum GlobalConstants {
+    kMaxPinCount1 = 'c',
+    kMaxPinSize = 5,
+    kMaxPinCount = 500,
+};
+
+struct PersonL {
+    int age;
+    double ids;
+    NSString *name;
+};
+
+typedef struct PersonL Persons;
+
+typedef enum  GlobalConstants Gla;
+
 @implementation SEOViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSLog(@"====== sizeof(%lu), sizeof(%lu)",sizeof(MYViewItemPosition),sizeof(Persons));
 }
 
 - (void)cleanCache

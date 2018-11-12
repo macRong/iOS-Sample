@@ -62,6 +62,12 @@ typedef void(^Gl)(BOOL);
 {
     [super viewDidLoad];
     
+    UIView *obj = [[UIView alloc]init];
+//    NSArray *ar = @[obj];
+    NSHashTable *hashTable = [NSHashTable weakObjectsHashTable];
+    [hashTable addObject:obj];
+    NSLog(@"===== objc =%lu",(unsigned long)obj.retainCount);
+    
     
     //第一步，通过UIBezierPath设置圆形的矢量路径
     UIBezierPath *circle = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, 200, 200)];
