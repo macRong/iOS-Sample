@@ -63,9 +63,16 @@ typedef void(^Gl)(BOOL);
     [super viewDidLoad];
     
     UIView *obj = [[UIView alloc]init];
+    UIView *objc1 = [UIView new];
 //    NSArray *ar = @[obj];
     NSHashTable *hashTable = [NSHashTable weakObjectsHashTable];
     [hashTable addObject:obj];
+    [hashTable addObject:objc1];
+    
+    for (id obj in hashTable.objectEnumerator)
+    {
+        NSLog(@"===== obj =%@",obj);
+    }
     NSLog(@"===== objc =%lu",(unsigned long)obj.retainCount);
     
     
